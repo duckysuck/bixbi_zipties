@@ -21,8 +21,8 @@ AddEventHandler("bixbi_zipties:startZiptie", function(targetId)
 	end
 	while (targetId == nil) do Citizen.Wait(100) end
     local targetPed = GetPlayerFromServerId(targetId)
-	if (AreHandsUp(GetPlayerPed(targetPed))) then
-	-- if (Player(targetId).state.handsup ~= nil and Player(targetId).state.handsup) then
+	-- if (AreHandsUp(GetPlayerPed(targetPed))) then
+	if (Player(targetId).state.handsup ~= nil and Player(targetId).state.handsup) then
 		exports['bixbi_core']:Loading(Config.ZiptieSpeed * 1000, 'Applying zipties to person')
 		Citizen.Wait(Config.ZiptieSpeed * 1000)
 		TriggerServerEvent('bixbi_zipties:ApplyZipties', targetId)
